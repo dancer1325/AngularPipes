@@ -7,7 +7,9 @@
 
         <table class="table">
             <thead class="thead-dark">
+                <!-- Header of the table -->
                 <tr>
+                    <!-- Table row -->
                     <th> Variable </th>
                     <th> Pipe </th>
                     <th> Salida </th>
@@ -48,18 +50,21 @@
                 <tr>
                     <td> {{ PI }} </td>
                     <td> number:'3.0-0' </td>
+                    <!-- 3 integer and 0 decimal numbers -->
                     <td> {{ PI | number:'3.0-0' }} </td>
                 </tr>
 
                 <tr>
                     <td> {{ PI }} </td>
                     <td> number:'.0-2' </td>
+                    <!-- No integer defined -- by default is 1, and from  0 to 2 decimal numbers -->
                     <td> {{ PI | number:'.0-2' }} </td>
                 </tr>
 
                 <tr>
                     <td> {{ salario }} </td>
                     <td> number:'6.0-2' </td>
+                    <!-- 6 integer , and from  0 to 2 decimal numbers -->
                     <td> {{ salario | number:'6.0-2' }} </td>
                 </tr>
 
@@ -72,18 +77,21 @@
                 <tr>
                     <td> {{ porcentaje }} </td>
                     <td> percent:'2.2-2' </td>
+                    <!-- Percentage with 2 integer , and from  2 to 2 decimal numbers -->
                     <td> {{ porcentaje | percent:'2.2-2' }} </td>
                 </tr>
 
                 <tr>
                     <td> {{ porcentaje }} </td>
                     <td> percent:'3.2-2' </td>
+                    <!-- Percentage with 3 integer , and from  2 to 2 decimal numbers -->
                     <td> {{ porcentaje | percent:'3.2-2' }} </td>
                 </tr>
 
                 <tr>
                     <td> {{ salario }} </td>
                     <td> currency </td>
+                    <!-- By default it's USD -->
                     <td> {{ salario | currency }} </td>
                 </tr>
 
@@ -96,13 +104,25 @@
                 <tr>
                     <td> {{ salario }} </td>
                     <td> currency:'CAD':'code':'.0-0' </td>
+                    <!-- Currency in CAD, indicated by the code.
+                      No integer indicated -- by default it's 1, from 0 to 0 decimal numbers -->
                     <td> {{ salario | currency:'CAD':'code':'.0-0' }} </td>
                 </tr>
 
                 <tr>
                     <td> {{ salario }} </td>
                     <td> currency:'CAD':'symbol':'.0-0' </td>
+                    <!-- Currency in CAD, indicated by the symbol.
+                      No integer indicated -- by default it's 1, from 0 to 0 decimal numbers -->
                     <td> {{ salario | currency:'CAD':'symbol':'.0-0' }} </td>
+                </tr>
+
+                <tr>
+                    <td> {{ salario }} </td>
+                    <td> currency:'CAD':'symbol':'.0-0' </td>
+                    <!-- Currency in CAD, indicated by the symbol, but with a wrong blank space introduced -- code it's shown
+                    No integer indicated -- by default it's 1, from 0 to 0 decimal numbers -->
+                    <td> {{ salario | currency:'CAD ':'symbol':'.0-0' }} </td>
                 </tr>
 
                 <tr>
@@ -114,18 +134,21 @@
                 <tr>
                     <td> {{ salario }} </td>
                     <td> currency:'CAD':'Alfredo':'.0-0' </td>
+                    <!-- Currency in CAD, indicated by not existing symbol -- display value indicated is shown -->
                     <td> {{ salario | currency:'CAD':'Alfredo':'.0-0' }} </td>
                 </tr>
 
                 <tr>
                     <td> {{ salario }} </td>
                     <td> currency:'CAD':true:'.0-0' </td>
+                    <!-- If display true === symbol -->
                     <td> {{ salario | currency:'CAD':true:'.0-0' }} </td>
                 </tr>
 
                 <tr>
                     <td> {{ salario }} </td>
                     <td> currency:'CAD':false:'.0-0' </td>
+                    <!-- If display false === code -->
                     <td> {{ salario | currency:'CAD':false:'.0-0' }} </td>
                 </tr>
 
@@ -137,13 +160,13 @@
 
                 <tr>
                     <td> {{ valorPromesa }} </td>
-                    <td> ValorPromesa </td>
+                    <td> ValorPromesa without pipes</td>
                     <td> {{ valorPromesa }} </td>
                 </tr>
 
                 <tr>
                     <td> {{ valorPromesa }} </td>
-                    <td> async </td>
+                    <td> ValorPromesa with async </td>
                     <td> {{ valorPromesa | async }} </td>
                 </tr>
 
@@ -151,48 +174,56 @@
                     <td> {{ fecha }} </td>
                     <td> Fecha without datePipe </td>
                     <td> {{ fecha }} </td>
+                    <!-- Although datePipe not used, it requires locale to show a text -->
                 </tr>
 
                 <tr>
                     <td> {{ fecha }} </td>
-                    <td> date </td>
+                    <td> Date with DatePipe by default options</td>
                     <td> {{ fecha | date }} </td>
+                    <!-- No optinal parameter indicated -- Default one's -->
                 </tr>
 
                 <tr>
                     <td> {{ fecha }} </td>
                     <td> date:'short' </td>
                     <td> {{ fecha | date:'short' }} </td>
+                    <!-- Use short pre-defined format option -->
                 </tr>
 
                 <tr>
                     <td> {{ fecha }} </td>
                     <td> date:'medium' </td>
                     <td> {{ fecha | date:'medium' }} </td>
+                    <!-- Use medium pre-defined format option -->
                 </tr>
 
                 <tr>
                     <td> {{ fecha }} </td>
                     <td> date:'long' </td>
                     <td> {{ fecha | date:'long' }} </td>
+                    <!-- Use long pre-defined format option -->
                 </tr>
 
                 <tr>
                     <td> {{ fecha }} </td>
                     <td> date:'full' </td>
                     <td> {{ fecha | date:'full' }} </td>
+                    <!-- Use full pre-defined format option -->
                 </tr>
 
                 <tr>
                     <td> {{ fecha }} </td>
                     <td> date:'shortDate' </td>
                     <td> {{ fecha | date:'shortDate' }} </td>
+                    <!-- Use shortDate pre-defined format option -->
                 </tr>
 
                 <tr>
                     <td> {{ fecha }} </td>
                     <td> date:'MMMM - dd' </td>
                     <td> {{ fecha | date:'MMMM - dd' }} </td>
+                    <!-- Use customized format option -->
                 </tr>
 
                 <tr>
@@ -203,14 +234,16 @@
                         <button (click)="idioma='es'" class="mr-1 btn btn-primary">Español</button>
                         <button (click)="idioma='en'" class="mr-1 btn btn-secondary">Inglés</button>
                         <button (click)="idioma='fr'" class="mr-1 btn btn-success">Francés</button>
+                        <button (click)="idioma='de'" class="mr-1 btn btn-success">Alemán</button>
                     </td>
                     <td> {{ fecha | date:'MMMM - dd':'':idioma }} </td>
+                    <!-- Use customized format option, without timezone but indicating locale -->
                 </tr>
 
                 <tr>
                     <td> {{ nombre }} </td>
                     <td>
-                        contrasena:{{ activar }}
+                        contrasena active:{{ activar }}
                         <br>
                         <button (click)="activar = !activar" class="btn btn-outline-primary">
               Activar/Desactiviar
@@ -228,10 +261,17 @@
 
 
 
-<h3>Slice <small>slice:1:4</small> </h3>
+<h3>Slice of an array <small>slice:1:4</small> </h3>
 <hr>
 <ul class="list-group">
     <li *ngFor="let personaje of personajes | slice:1:4" class="list-group-item"> {{ personaje }} </li>
+</ul>
+
+<h3>Slice of an array <small>slice:4:20</small> </h3>
+<hr>
+<ul class="list-group">
+    <!-- If the end slice's index > # of available elements -- We don't get an error -->
+    <li *ngFor="let personaje of personajes | slice:4:20" class="list-group-item"> {{ personaje }} </li>
 </ul>
 
 <h3>JSON </h3>
@@ -255,8 +295,13 @@
 <div class="row mb-5">
     <div class="col">
 
+        <!-- Without byPass methods, no script could be injected -->
+        <!-- <iframe width="560" height="315" [src]="videoUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+        <!-- With byPass method, a script could be injected -->
         <iframe width="560" height="315" [src]="videoUrl | domseguro" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-    </iframe>
+
+        </iframe>
 
 
     </div>
